@@ -1,0 +1,14 @@
+#!/bin/bash
+# secure shell wrapper
+
+# create id_rsa
+# read   id_rsa
+# update id_rsa
+# delete id_rsa
+
+# create config
+# read   config
+# update config 
+# delete config 
+
+echo SSH

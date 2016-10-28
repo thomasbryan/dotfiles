@@ -1,0 +1,8 @@
+[user]
+  name = Thomas Bryan
+[core]
+  editor = vim
+[branch]
+  autosetuprebase = always
+[push]
+  default = matching
