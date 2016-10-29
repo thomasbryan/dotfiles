@@ -1,5 +1,6 @@
 [user]
   name = Thomas Bryan
+  email = github@thomasbryan.info
 [core]
   editor = vim
 [branch]

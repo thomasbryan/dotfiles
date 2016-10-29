@@ -60,8 +60,7 @@ if [ -f $HOME/.aliases ];then
 fi
 export EDITOR=/usr/bin/vi
 export TERM=xterm-256color
-#export STY=
-if [ $TERM != 'screen' ] && [ $TERM != 'dumb' ] && [ $TERM != 'screen.linux' ]; then
+if [ -z "$STY" ]; then
   if hash screen 2>/dev/null; then
     screen -xRR
   else
