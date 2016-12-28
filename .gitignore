@@ -2,3 +2,4 @@ aliases
 bin/config/*
 bin/id_rsa/*
 vim/vim
+vim/.netrwhist
