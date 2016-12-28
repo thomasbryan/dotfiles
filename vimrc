@@ -5,6 +5,8 @@ let NERDTreeDirArrows = 0
 autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
 syntax enable
 set number
+set foldnestmax=20
+set foldmethod=indent
 set smartindent
 set expandtab
 set tabstop=2
