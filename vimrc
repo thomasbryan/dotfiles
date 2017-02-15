@@ -15,6 +15,7 @@ set shiftwidth=2
 set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
 set laststatus=2
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 set pastetoggle=<leader>3
 imap <F1> <Esc>

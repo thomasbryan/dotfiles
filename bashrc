@@ -50,6 +50,8 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias df='df -h'
+alias nginx='docker ps|grep front|awk '"'"'{print "docker exec -i "$1" /etc/init.d/nginx reload"}'"'"'|sh'
+
 if hash vim 2>/dev/null; then
   alias vi='vim'
 fi
