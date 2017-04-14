@@ -50,6 +50,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias df='df -h'
+alias gs='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '"'"'(echo {} && cd {} && git status -s && echo)'"'"' \;'
 alias nginx='docker ps|grep front|awk '"'"'{print "docker exec -i "$1" /etc/init.d/nginx reload"}'"'"'|sh'
 
 if hash vim 2>/dev/null; then
