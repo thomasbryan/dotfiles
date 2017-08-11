@@ -50,7 +50,8 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias df='df -h'
-alias nginx='docker ps|grep front|awk '"'"'{print "docker exec -i "$1" /etc/init.d/nginx reload"}'"'"'|sh'
+alias gs='find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '"'"'(echo {} && cd {} && git status -s && echo)'"'"' \;'
+alias nginx='docker ps|grep "thomasbryan/os"|awk '"'"'{print "docker exec -i "$1" /etc/init.d/nginx reload"}'"'"'|sh'
 
 if hash vim 2>/dev/null; then
   alias vi='vim'
@@ -69,4 +70,23 @@ if [ -z "$STY" ]; then
     cd
   fi
 fi
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/opt/google/chrome:$PATH"
+SSH_ENV=$HOME/.ssh/environment
+# start the ssh-agent
+function start_agent {
+    echo "Initializing new SSH agent..."
+    # spawn ssh-agent
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add
+}
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi

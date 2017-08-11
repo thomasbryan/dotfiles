@@ -16,6 +16,7 @@ set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p
 set laststatus=2
 set background=dark
 let g:solarized_termcolors=256
+set shellcmdflag=-c
 colorscheme solarized
 set pastetoggle=<leader>3
 imap <F1> <Esc>

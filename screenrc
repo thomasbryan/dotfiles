@@ -155,10 +155,10 @@ bind X lockscreen
 # hardstatus alwayslastline "%Lw"
 # Red Hat's normal status line
 hardstatus string "[screen %n%?: %t%?] %h"
-# bind = resize =
-# bind + resize +1
-# bind - resize -1
-# bind _ resize max
+bind - resize -10
+bind + resize =
+bind = resize +10
+bind _ resize max
 # defnonblock 1
 # blankerprg rain -d 100
 # idle 30 blanker
