@@ -24,6 +24,7 @@ map <F1> <Esc>
 map <leader>1 :NERDTreeToggle<CR>
 map <leader>2 :set invnumber<CR>
 map <leader>4 <C-w>w
+map <leader>5 :redo<CR>
 map <leader>z :bd<CR>
 map <leader>] :bn<CR>
 map <leader>[ :bp<CR>
