@@ -1,1 +1,5 @@
-#vt100 { font-size: 8pt; }
+#vt100 { background-color: #1c1c1c; font-size: 8pt; }
+#vt100 .ansiDef { color: #ffffff; }
+#vt100 .bgAnsiDef { background-color: #1c1c1c; }
+#vt100 #scrollable.inverted .ansiDef { color: #1c1c1c; }
+#vt100 #scrollable.inverted .bgAnsiDef { background-color: #ffffff; }
