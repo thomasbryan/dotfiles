@@ -15,6 +15,8 @@ for i in $( ls $p | grep -v $0 ); do
       if [ -f ~/.$i ];then
         /bin/mv ~/.$i ~/.$i-$(date +"%s")
         /bin/ln -s $p/$i ~/.$i
+      else
+        /bin/ln -s $p/$i ~/.$i
       fi
       if [[ -d ~/.$i/ && ! -L ~/.$i ]];then
         /bin/mv ~/.$i/ ~/.$i-$(date +"%s")/
