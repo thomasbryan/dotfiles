@@ -6,17 +6,21 @@ touch $p/aliases
 for i in $( ls $p | grep -v $0 ); do
   case $i in
     "Dockerfile") ;;
+    "install.sh") ;;
     "Makefile") ;;
+    "nfs") ;;
+    "shellinabox.css") ;;
     "supervisord.conf") ;;
     *) 
       if [ -f ~/.$i ];then
         /bin/mv ~/.$i ~/.$i-$(date +"%s")
+        /bin/ln -s $p/$i ~/.$i
       fi
-      if [ -d ~/.$i/ ];then
+      if [[ -d ~/.$i/ && ! -L ~/.$i ]];then
         /bin/mv ~/.$i/ ~/.$i-$(date +"%s")/
+        /bin/ln -s $p/$i ~/.$i
       fi
       #/bin/rm -rf ~/.$i 
-      /bin/ln -s $p/$i ~/.$i
     ;;
   esac
 done

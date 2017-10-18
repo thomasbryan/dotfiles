@@ -12,7 +12,7 @@ INSTANCE = default
 
 DIR := ${CURDIR}
 
-.PHONY: default install build docker push bash shell run start stop rm release
+.PHONY: default install build docker push bash shell run restart reinstall start stop rm release
 
 install:
 	/bin/bash ./install.sh
@@ -33,6 +33,10 @@ shell:
 
 run:
 	docker run --rm --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO):$(VERSION)
+
+reinstall: stop rm docker
+
+restart: stop rm start
 
 start:
 	docker run -d --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO):$(VERSION)
