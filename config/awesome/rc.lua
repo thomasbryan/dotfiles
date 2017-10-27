@@ -513,7 +513,7 @@ function run_once(cmd,class,tag)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
-awful.util.spawn("nm-applet &")
+awful.util.spawn("sudo nm-applet &")
 awful.util.spawn("xscreensaver")
 run_once("google-chrome","Google-chrome",tags[1][2])
 run_once("xterm","XTerm",tags[1][1])
