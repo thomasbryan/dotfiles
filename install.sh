@@ -11,6 +11,7 @@ for i in $( ls $p | grep -v $0 ); do
     "nfs") ;;
     "shellinabox.css") ;;
     "supervisord.conf") ;;
+    "ubuntu.bash") ;;
     *) 
       if [ -f ~/.$i ];then
         /bin/mv ~/.$i ~/.$i-$(date +"%s")
